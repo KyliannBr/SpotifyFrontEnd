@@ -1,0 +1,526 @@
+$bgcolor1 : #313131
+$bgcolor2 : #161616
+$bgcolor3 : #680000
+$bgcolor : linear-gradient(0deg, $bgcolor2 75%, $bgcolor1 100%);
+$bgcolor2 : linear-gradient(0deg, $bgcolor2 75%, $bgcolor3 100%);
+
+$liBgColorSelected : #f1f1f121;
+
+*, ::before, ::after 
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
+html 
+  min-width: 1100px !important
+
+body 
+    background-repeat: no-repeat
+    background-position: top center
+    background-size: 100%
+    min-height: 100vh
+    min-width: 100vw
+    display: flex
+    overflow: auto
+
+
+.imgOff
+    display: none
+    transition: all .5s
+
+svg
+  transition: all .3s
+
+nav
+    height: 90vh
+    width: 250px
+    background-color: #000000d3
+    display: flex
+    flex-direction: column
+    align-items: left
+    position: fixed top
+
+    img 
+        width: 65%
+        height: auto
+        margin: 25px auto 25px 20px
+
+    ul
+        width: 90%
+        height: auto
+        display: flex
+        flex-direction: column
+        margin: 20px auto
+
+        li 
+            width: 100%
+            height: 50px
+            display: flex
+            place-content: center
+            place-items: center
+            flex-direction: row
+            border-radius: 7px
+
+            img 
+                width: 30px
+                height: 30px
+        
+            a
+                width: 100%
+                height: 100%
+                display: flex
+                place-items: center
+                padding-left: 25px
+                color: #9e9e9e
+                text-decoration: none
+                transition: all .5s
+                font-weight: bold
+
+                &:hover
+                    color: #fff
+                    transition: all .5s
+
+            .li_a--active
+                color: #fff
+
+
+        .li--active
+            background-color: #f1f1f121
+            
+
+    hr
+        width: 90%
+        border: none
+        height: .5px
+        background-color: #5c5c5c
+        margin: 0 auto
+
+main
+    width: calc( 100vw - 250px )
+    height: 90vh
+    background: $bgcolor
+    overflow-x: hidden
+
+    .top
+      width: 100%
+      height: 75px
+      position: fixed
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      .left
+        width: auto
+        height: 100%
+        display: flex
+        align-items: center
+        padding: 0 40px
+        flex-direction: row
+
+        button
+          width: 40px
+          height: 40px
+          border-radius: 999px
+          border: none
+          display: flex
+          place-content: center
+          place-items: center
+          margin: 0 15px
+          background-color: #00000069
+          cursor: not-allowed
+
+          svg
+            color: #f1f1f1
+            width: 75%
+            height: auto
+
+      .right
+        width: auto
+        height: 100%
+        transform: translateX(-260px)
+        display: flex
+        align-items: center
+
+        a
+          width: auto
+          padding: 10px 40px
+          border: 1px solid #fff
+          border-radius: 50px
+          background-color: #000000af
+          color: #fff
+          text-transform: uppercase
+          text-decoration: none
+          letter-spacing: 2px
+          margin: 0 25px
+    
+        .dropdown
+          display: inline-block
+          position: relative
+
+          button
+            width: auto
+            padding: 10px 40px
+            border: 1px solid #fff
+            border-radius: 50px
+            background-color: #000000af
+            color: #fff
+            text-transform: uppercase
+            text-decoration: none
+            letter-spacing: 2px
+            margin: 0 25px
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+
+            svg
+              height: auto
+              width: 22px
+              margin-right: 25px
+
+        .dropdown-content
+          display: none
+          position: absolute
+          padding-top: 10px
+          width: 100%
+          overflow: auto
+          box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4)
+          background-color: #222222
+
+          hr
+            border: none
+            height: .5px
+            background-color: #5c5c5c
+            width: 90%
+            margin: 0 auto
+
+        .dropdown:hover .dropdown-content
+          display: block
+          margin: 0
+          padding: 0
+          box-sizing: border-box
+
+        .dropdown-content a
+          display: block
+          color: #fff
+          width: 95%
+          text-decoration: none
+          padding: 15px 15px
+          margin: 0
+          border: none
+          background-color: transparent
+          border-radius: 0
+          margin: 5px 5px
+          text-transform: capitalize
+          letter-spacing: normal
+
+
+          &:hover
+            color: #FFFFFF
+            background-color: #5050505b
+
+    .center
+      width: 100%
+      height: 100%
+      margin-top: 120px
+      margin-left: 20px
+
+      p
+        color: #fff
+        font-size: 30px
+        font-weight: bold   
+
+        &::first-letter
+          text-transform: uppercase
+
+      .cardsTop 
+        display: flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        padding: 15px 15px   
+
+      .TopCards
+        width: 400px
+        height: 100px
+        background-color: #353535da
+        border-radius: 10px
+        overflow: hidden
+        display: flex
+        align-items: center
+        margin: 0 auto
+        transition: all .5s
+        position: relative
+        margin: 15px 0
+
+        img
+          height: 100%
+          width: auto
+          box-shadow: 1px 1px 20px #000;
+
+        p
+          font-size: 18px
+          margin: 0 25px
+
+        button
+          width: 50px
+          height: 50px
+          background-color: #00b800
+          border: none
+          border-radius: 999px
+          display: flex
+          place-content: center
+          place-items: center
+          position: absolute
+          right: 25px
+
+          opacity: 0
+          transition: all .5s
+
+          svg
+            width: 60%
+            height: auto
+            color: #fff
+            transition: all .5s
+
+        &:hover
+          background-color: #626262da
+          transition: all .5s
+
+          button
+            transition: all .5s
+            opacity: 1
+
+
+
+
+
+footer
+    height: 10vh
+    width: 100%
+    background-color: #222222
+    position: absolute
+    bottom: 0
+    display: flex
+
+    .left
+        flex-grow: 1
+        display: flex
+        align-items: center
+
+        .MusicImg
+            width: 70px
+            height: 70px
+            background-color: pink
+            display: flex
+            margin: 0 15px
+
+        .MusicInfo
+            color: #fff
+            .Titre
+                font-weight: bold   
+
+                &:hover
+                  text-decoration: underline
+
+            .auteur
+                color: #aaaaaa    
+
+        .buttons 
+            .like
+                width: 20px
+                height: 20px
+                margin: 0 50px 
+                position: relative
+                
+                img
+                    position: relative
+
+    .center
+        flex-grow: 3
+        display: flex
+        flex-direction: column
+        place-content: center
+        place-items: center
+
+        .top
+          width: 40%
+          height: 60%
+          display: flex
+          align-items: center
+          justify-content: space-evenly
+
+          .buttonsLeft
+            width: 40%
+            height: 100%
+            display: flex
+            justify-content: space-evenly
+            align-items: center
+
+            .randomButton
+              svg
+                height: 30px
+                width: 30px
+                color: #aaaaaa
+
+                &:hover
+                  color: #ffffff
+            
+            .beforeButton
+              svg
+                height: 30px
+                width: 30px
+                fill: #aaaaaa
+
+                &:hover
+                  fill: #ffffff
+
+          .PlayButton
+            width: 20%
+            height: 100%
+            display: flex
+            place-content: center
+            place-items: center
+
+            svg
+              width: 45px
+              height: 45px
+              color: #ffffff
+
+              &:hover
+                color: #c2c2c2
+
+          .buttonsRight
+            width: 40%
+            height: 100%
+            display: flex
+            justify-content: space-evenly
+            align-items: center
+
+            .nextButton
+              height: 30px
+              width: 30px
+              svg
+                color: #aaaaaa
+
+                &:hover
+                  color: #ffffff
+
+
+
+            .repeatButton
+              height: 30px
+              width: 30px
+              svg
+                color: #aaaaaa
+
+                &:hover
+                  color: #ffffff
+
+        .bottom
+          width: 100%
+          height: 40%
+          display: flex
+          align-items: center
+          justify-content: space-evenly
+          color: #fff
+
+          .playingBar
+            width: 75%
+            height: 4px
+            border-radius: 999px
+            background: #0f0
+
+    .right
+        flex-grow: 1
+        
+
+        .volume
+          float: right
+          width: 55%
+          height: 100%
+          display: flex
+          align-items: center
+          justify-content: space-evenly
+          flex-direction: row
+
+          
+
+
+          .volumeIcon
+            display: flex
+            align-items: center
+            justify-content: center
+            width: auto
+            height: 100%
+
+            svg
+              color: #aaaaaa
+              height: 30px
+              width: 30px
+
+            &:hover
+              color: #ffffff
+
+          .volumeBar
+            width: 75%
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+
+            input
+              width: 75%
+              height: 4px
+
+
+
+
+
+@keyframes Like
+  0%
+    transform: scale3d(1, 1, 1)
+
+  30%
+    transform: scale3d(1.25, 0.75, 1)
+
+  40%
+    transform: scale3d(0.75, 1.25, 1)
+
+  50%
+    transform: scale3d(1.15, 0.85, 1)
+
+  65%
+    transform: scale3d(0.95, 1.05, 1)
+
+  75%
+    transform: scale3d(1.05, 0.95, 1)
+
+  100%
+    transform: scale3d(1, 1, 1)
+
+
+@keyframes Dislike
+  0%,
+  100%
+    transform: translateX(0%)
+    transform-origin: 50% 50%
+
+  15% 
+    transform: translateX(-10px) rotate(-6deg)
+  
+
+  30% 
+    transform: translateX(5px) rotate(6deg)
+  
+
+  45% 
+    transform: translateX(-5px) rotate(-3.6deg)
+  
+
+  60% 
+    transform: translateX(3px) rotate(2.4deg)
+  
+
+  75% 
+    transform: translateX(-3px) rotate(-1.2deg)
